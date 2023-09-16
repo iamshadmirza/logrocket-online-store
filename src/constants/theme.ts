@@ -1,14 +1,15 @@
 import { Dimensions } from "react-native";
+import { Colors, Fonts, Sizes, Theme } from "./types";
 const { width, height } = Dimensions.get("window");
 
-export const COLORS = {
+export const COLORS: Colors = {
   black: "#1E1F20",
   white: "#FFFFFF",
   lightGray: "#ABAFB8",
   gray: "#BEC1D2",
 };
 
-export const SIZES = {
+export const SIZES: Sizes = {
   //globalls
   base: 8,
   font: 14,
@@ -33,7 +34,7 @@ export const SIZES = {
   height,
 };
 
-export const FONTS = {
+export const FONTS: Fonts = {
   navTitle: { fontSize: SIZES.navTitle, fontWeight: "700" },
   largeTitleBold: { fontSize: SIZES.h2 },
   h1: { fontSize: SIZES.h1, lineHeight: 36, fontWeight: "800" },
@@ -48,6 +49,6 @@ export const FONTS = {
   body5: { fontSize: SIZES.body5, lineHeight: 22 },
 };
 
-const customTheme = { COLORS, SIZES, FONTS };
+const customTheme: Theme = { COLORS, SIZES, FONTS };
 
 export default customTheme;

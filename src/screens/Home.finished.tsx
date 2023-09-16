@@ -7,6 +7,8 @@ import {
   TouchableOpacity,
   Image,
   Modal,
+  TextStyle,
+  StyleProp,
 } from "react-native";
 import { BlurView } from "expo-blur";
 import { images, COLORS, SIZES, FONTS } from "../constants";
@@ -140,7 +142,7 @@ const Home = () => {
           setShowAddToCartModal(true);
         }}
       >
-        <Text style={{ color: COLORS.lightGray, ...FONTS.h5 }}>
+        <Text style={{ color: COLORS.lightGray, ...FONTS.h5 } as StyleProp<TextStyle>}>
           {item.type}
         </Text>
         <View
@@ -164,7 +166,7 @@ const Home = () => {
             >
               {item.name}
             </Text>
-            <Text style={{ color: COLORS.white, ...FONTS.h2 }}>
+            <Text style={{ color: COLORS.white, ...FONTS.h2 } as StyleProp<TextStyle>}>
               {item.price}
             </Text>
           </View>
@@ -213,7 +215,7 @@ const Home = () => {
           }}
         >
           <Text>{item.name}</Text>
-          <Text style={{ ...FONTS.h3 }}>{item.price}</Text>
+          <Text style={{ ...FONTS.h3 } as StyleProp<TextStyle>}>{item.price}</Text>
         </View>
       </TouchableOpacity>
     );
@@ -265,7 +267,7 @@ const Home = () => {
           marginTop: SIZES.radius,
           marginHorizontal: SIZES.padding,
           ...FONTS.h2,
-        }}
+        } as StyleProp<TextStyle>}
       >
         FEATURED
       </Text>
@@ -318,9 +320,8 @@ const Home = () => {
         >
           <BlurView
             style={style.blur}
-            blurType="light"
-            blurAmount={20}
-            reducedTransparencyFallbackColor="white"
+            tint="light"
+            intensity={20}
           >
             <TouchableOpacity
               style={style.absolute}
@@ -354,7 +355,7 @@ const Home = () => {
                   marginHorizontal: SIZES.padding,
                   color: COLORS.white,
                   ...FONTS.h2,
-                }}
+                } as StyleProp<TextStyle>}
               >
                 {selectedItem.name}
               </Text>
@@ -374,7 +375,7 @@ const Home = () => {
                   marginHorizontal: SIZES.padding,
                   color: COLORS.white,
                   ...FONTS.h1,
-                }}
+                } as StyleProp<TextStyle>}
               >
                 {selectedItem.price}
               </Text>

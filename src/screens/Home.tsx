@@ -7,6 +7,8 @@ import {
   TouchableOpacity,
   Image,
   Modal,
+  StyleProp,
+  TextStyle,
 } from "react-native";
 import { BlurView } from 'expo-blur';
 import { images, COLORS, SIZES, FONTS } from "../constants";
@@ -141,7 +143,7 @@ const Home = () => {
           setShowAddToCartModal(true);
         }}
       >
-        <Text style={{ color: COLORS.lightGray, ...FONTS.h5 }}>
+        <Text style={{ color: COLORS.lightGray, ...FONTS.h5 } as StyleProp<TextStyle>}>
           {item.type}
         </Text>
         <View
@@ -165,7 +167,7 @@ const Home = () => {
             >
               {item.name}
             </Text>
-            <Text style={{ color: COLORS.white, ...FONTS.h2 }}>
+            <Text style={{ color: COLORS.white, ...FONTS.h2 } as StyleProp<TextStyle>}>
               {item.price}
             </Text>
           </View>
@@ -196,7 +198,7 @@ const Home = () => {
           marginTop: SIZES.radius,
           marginHorizontal: SIZES.padding,
           ...FONTS.h2,
-        }}
+        } as StyleProp<TextStyle>}
       >
         FEATURED
       </Text>
